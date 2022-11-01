@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <title>Document</title>
+  <!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+
+</head>
+<body>
+  <header>
+    <div class="header_wrapper">
+      <div class="top_logo">
+        <a href="index.html">
+          <img src="img2/fish_logo.png" alt="お魚ロゴ" class="pc">
+          <h1 id="top">AquaAqua</h1>
+        </a>
+        <p class="pc">アクアリウムなオンラインショップ</p>
+      </div>
+      <div class="search_wrapper">
+        <form action="" method="post">
+          <input type="search" name="search" placeholder="商品名を入力">
+          <input type="image" name="submit" value="検索" src="img2/kensaku_icon.png">
+        </form>
+      </div>
+      <div class="header_icon">
+        <a href="login.html"><img src="img2/loguin_icon.png" alt="ログインアイコン"></a>
+        <a href="cart.html"><img src="img2/cart.png" alt="カートアイコン"></a>
+      </div>
+    </div>
+    <div class="header_inner">
+      <input type="checkbox" id="menu_btn_check">
+      <label for="menu_btn_check" class="menu_btn">
+        <span></span>
+      </label>
+      <nav class="header_nav">
+        <ul>
+          <li><a href="index.html#New">特集</a></li>
+          <li><a href="index.html#Blog">商品一覧</a></li>
+          <li><a href="contact.html">お問合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+
+    <div class="basket">
+      <p>商品ページのカートに入れるボタンを押すとここに格納されていくようにしたい</p>
+      <!-- <div class="basket-module">
+        <label for="promo-code">Enter a promotional code</label>
+        <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
+        <button class="promo-code-cta">Apply</button>
+      </div> -->
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">商品</li>
+          <li class="price">価格</li>
+          <li class="quantity">個数</li>
+          <li class="subtotal">小計</li>
+        </ul>
+      </div>
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="img2/120×166.jpg" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h3><strong><span class="item-quantity">4</span> ×</strong> 商品名入れます</h3>
+            <!-- <p><strong>Navy, Size 18</strong></p>
+            <p>Product Code - 232321939</p> -->
+          </div>
+        </div>
+        <div class="price">26.00</div>
+        <div class="quantity">
+          <input type="number" value="4" min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">104.00</div>
+        <div class="remove">
+          <button>削除</button>
+        </div>
+      </div>
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="img2/120×166.jpg" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h3><strong><span class="item-quantity">1</span> ×</strong> 商品名入れます</h3>
+            <!-- <p><strong>Navy, Size 10</strong></p>
+            <p>Product Code - 232321939</p> -->
+          </div>
+        </div>
+        <div class="price">2600</div>
+        <div class="quantity">
+          <input type="number" value="1" min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">2600</div>
+        <div class="remove">
+          <button>削除</button>
+        </div>
+      </div>
+    </div>
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span> 個の商品が入っています</div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">商品金額合計</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">1300</div>
+          <div class="summary-promo hide">
+            <div class="promo-title">Promotion</div>
+            <div class="promo-value final-value" id="basket-promo"></div>
+          </div>
+        </div>
+        <div class="summary-delivery">
+          <select name="delivery-collection" class="summary-delivery-selection">
+            <option value="0" selected="selected">集荷または配達を選択</option>
+            <option value="collection">Collection</option>
+            <option value="first-class">Royal Mail 1st Class</option>
+            <option value="second-class">Royal Mail 2nd Class</option>
+            <option value="signed-for">Royal Mail Special Delivery</option>
+          </select>
+        </div>
+        <div class="summary-total">
+          <div class="total-title">合計</div>
+          <div class="total-value final-value" id="basket-total">13000</div>
+        </div>
+        <div class="summary-checkout">
+          <button class="checkout-cta">決済へ進む</button>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+  <footer>
+    <div class="footer_wrapper">
+      <div id="About">
+        <div class="top_logo">
+          <img src="img2/fish_logo.png" alt="お魚ロゴ">
+          <h1 id="top">AquaAqua</h1>
+        </div>
+        <p>アクアリウムなオンラインショップ</p>
+
+        <ul>
+          <li><a href="contact.html#top">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="userpolicy.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+  </footer>
+  <!-- jqueryリンク -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+  <script>
+    //メインナビスクロール
+    //バーガーメニューをクリックしてリンクにスクロールすると閉じる
+    $(function () {
+      //navタグのliの中のaタグをクリックした時
+      $('.header_nav li a').on('click', function
+        (event) {
+        //inputタグの指定
+        $('#menu_btn_check').prop('checked', false);
+      })
+    });
+
+    // バーガーメニューをクリックするとスクロール
+    $('.header_nav a[href*="#"]').click(function () {
+      //リンクのHTMLタグのhrefから、リンクされているエリアidの値を取得
+      let elmHash = $(this).attr('href');
+
+      //id上部の距離を取得
+      let pos = $(elmHash).offset().top
+
+      //取得した位置にスクロール。500の数値が大きくなるほどゆっくり
+      $('body,html').animate({ scrollTop: pos }, 500);
+      return false;
+    });
+
+    //タイトルロゴをクリックするとスクロール
+    // $(function () {
+    //   let pagetop = $('h1');
+    //   pagetop.click(function () {
+    //     $('body,html').animate({
+    //       scrollTop: 0
+    //     }, 500);
+    //     return false;
+    //   });
+    // });
+  </script>
+  <!-- カートの決済のリンクとスクリプト -->
+  <!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

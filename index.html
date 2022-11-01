@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>アクアリウムなオンラインショップ</title>
+</head>
+<body>
+  <header>
+    <div class="header_wrapper">
+      <div class="top_logo">
+        <a href="index.html">
+          <img src="img2/fish_logo.png" alt="お魚ロゴ" class="pc">
+          <h1 id="top">AquaAqua</h1>
+        </a>
+        <p class="pc">アクアリウムなオンラインショップ</p>
+      </div>
+      <div class="search_wrapper">
+        <form action="" method="post">
+          <input type="search" name="search" placeholder="商品名を入力">
+          <input type="image" name="submit" value="検索" src="img2/kensaku_icon.png">
+        </form>
+      </div>
+      <div class="header_icon">
+        <a href="login.html"><img src="img2/loguin_icon.png" alt="ログインアイコン"></a>
+        <a href="cart.html"><img src="img2/cart.png" alt="カートアイコン"></a>
+      </div>
+    </div>
+    <div class="header_inner">
+      <input type="checkbox" id="menu_btn_check">
+      <label for="menu_btn_check" class="menu_btn">
+        <span></span>
+      </label>
+      <nav class="header_nav">
+        <ul>
+          <li><a href="#New">特集</a></li>
+          <li><a href="#Blog">商品一覧</a></li>
+          <li><a href="contact.html">お問合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="top_wrapper">
+      <picture>
+        <source media="(max-width:767px)" srcset="img2/top_img_mb.png">
+        </source>
+        <img src="img2/top_img.png" alt="イメージ画像">
+      </picture>
+    </div>
+    <div id="New" class="first_wrapper">
+      <h2>特 集</h2>
+      <div class="first_item">
+        <div>
+          <a href="tokusyu_01.html">
+            <picture>
+              <source media="(max-width:767px)" srcset="img2/ec_banner_a.png">
+              <img src="img2/ec_banner_a.png" alt="イメージ画像">
+            </picture>
+          </a>
+        </div>
+        <div>
+          <a href="tokusyu_02.html">
+            <picture>
+              <source media="(max-width:767px)" srcset="img2/ec_banner_b.png">
+              <img src="img2/ec_banner_b.png" alt="イメージ画像">
+            </picture>
+          </a>
+        </div>
+      </div>
+    <div id="app">
+    <div class="main_wrapper">
+      <section id="Blog">
+        <h2>商品一覧</h2>
+
+        <!-- vue仕様(jsonとソート) -->
+        <div class="select-type_sorting_container">
+            <label for="sort">種類ソート:</label>
+            <select id="select-type" class="select-type_sorting" v-model.number="sortType" >
+                <option value="1" >ソフトコーラル</option>
+                <option value="2">LPS</option>
+                <option value="3">SPS</option>
+              </select>
+        </div> 
+         <div class="syohin_item-flex"> 
+        <div class="syohin_item"  v-for="product in sortList()">
+              <picture>
+                <source media="(max-width:767px)" srcset=""> 
+                 <div class="image-block">
+                    <img v-bind:src="product.image"> 
+                </div>
+              </picture>
+              <p>{{ product.itemName }}</p>
+              <p>￥{{ product.price }}～</p>
+          </div>
+        </div>
+
+
+     <!-- ページネーション --> 
+     <div class="pagination">
+        <p class="total_counter">{{ total_counter }}</p>
+        <p class="prev" v-on:click="prev_btn()">前へ</p>
+        <ul class="page_counter" v-for="page in pageBox">
+            <li>{{ page.pageNumber }}</li>
+        </ul>
+        <p class="next" v-on:click="next_btn">次へ</p>
+    </div>
+
+<!-- js仕様 -->
+        <!-- <div class="select-type_sorting_container">
+            <label for="sort">種類ソート:</label>
+            <select id="select-type" class="select-type_sorting">
+                <option value="1">ソフトコーラル</option>
+                <option value="2">LPS</option>
+                <option value="3">SPS</option>
+              </select>
+        </div>
+
+        <div class="syohin_item-flex"> 
+            <div class="syohin_item">
+                        <div class="image-block"><img src="img2/product1.jpg"><p>チヂミトサカ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product2.jpeg"><p>スターポリプ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product3.jpg"><p>ウミキノコ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product4.jpg"><p>ディスクコーラル</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product5.jpg"><p>ツヅウミヅタ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product6.jpg"><p>マメスナギンチャク</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product7.jpg"><p>ウミアザミ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product8.jpg"><p>キクメイシ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product9.jpg"><p>ナガレハナサンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product10.jpg"><p>キッカサンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product11.jpg"><p>ハナサンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product12.jpg"><p>アワサンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product13.jpg"><p>カクオオトゲキクメイシ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product14.jpg"><p>ハナガササンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product15.jpg"><p>オオタバサンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product16.jpg"><p>ハナガタサンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product17.jpg"><p>ハナヤサイサンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product18.jpg"><p>ショウガサンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product19.jpg"><p>ミドリイシ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product20.jpg"><p>ハイマツミドリイシ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product21.jpg"><p>コモンサンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product22.jpg"><p>ウスコモンサンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product23.jpg"><p>メデゥーササンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product24.jpg"><p>エダコモンサンゴ</p><p>5300～</p></div>
+                        <div class="image-block"><img src="img2/product25.jpg"><p>トゲサンゴ</p><p>5300～</p></div>
+                    </div>
+              </div> -->
+        </div>
+      </section>
+    </div>
+</div>
+  </main>
+  <footer>
+    <div class="footer_wrapper">
+      <div id="About">
+        <div class="top_logo">
+          <img src="img2/fish_logo.png" alt="お魚ロゴ">
+          <h1 id="top">AquaAqua</h1>
+        </div>
+        <p>アクアリウムなオンラインショップ</p>
+        <ul>
+          <li><a href="contact.html#top">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="userpolicy.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+  </footer>
+  <!-- jqueryリンク -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+  <script>
+    //メインナビスクロール
+    //バーガーメニューをクリックしてリンクにスクロールすると閉じる
+    $(function () {
+      //navタグのliの中のaタグをクリックした時
+      $('.header_nav li a').on('click', function
+        (event) {
+        //inputタグの指定
+        $('#menu_btn_check').prop('checked', false);
+      })
+    });
+
+    // バーガーメニューをクリックするとスクロール
+    $('.header_nav a[href*="#"]').click(function () {
+      //リンクのHTMLタグのhrefから、リンクされているエリアidの値を取得
+      let elmHash = $(this).attr('href');
+
+      //id上部の距離を取得
+      let pos = $(elmHash).offset().top
+
+      //取得した位置にスクロール。500の数値が大きくなるほどゆっくり
+      $('body,html').animate({ scrollTop: pos }, 500);
+      return false;
+    });
+
+    //タイトルロゴをクリックするとスクロール
+    $(function () {
+      let pagetop = $('h1');
+      //画像をクリックすとスクロール&画像消える
+      // pagetop.hide();
+      // $(window).scroll(function () {
+      //   if ($(this).scrollTop() > 500) {
+      //     pagetop.fadeIn();
+      //   } else {
+      //     pagetop.fadeOut();
+      //   }
+      // });
+      pagetop.click(function () {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+  </script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="js/main.js"></script>
+</html>

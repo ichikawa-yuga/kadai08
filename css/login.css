@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+/* sp画面の設定 */
+@media screen and (max-width:767px){
+
+  .top_logo a{
+display: flex;
+align-items: center;
+}
+    .main_wrapper{
+
+}
+
+.main_wrapper form{
+  text-align: center;
+   margin: 30px 0 50px;
+}
+
+/* ログイン画面 divの設定 */
+.login_form_btm{
+  padding: 10px 0;
+  margin:10px 0;
+  background-color: #F7F7F7;
+}
+
+.login_form_top p{
+  margin-bottom: 20px;
+}
+
+input{
+width: 70%;
+height: 3em;
+padding:3px;
+margin: 5px 0;
+}
+
+button{
+  display: block;
+  margin: 0 auto;
+  border:none;
+  background-color: #333;
+  color:#fff;
+  width: 70%;
+  height: 3em;
+  transition:0.5s;
+}
+
+
+
+}
+
+/* pc画面の設定 */
+@media screen and (min-width:768px){
+.top_logo a{
+display: flex;
+align-items: center;
+}
+
+  .main_wrapper{
+  margin: 70px 0;
+}
+
+.main_wrapper form{
+  text-align: center;
+   margin: 70px 0;
+}
+
+/* ログイン画面 divの設定 */
+.login_form_btm{
+  padding: 10px 0;
+  margin:10px 0;
+  background-color: #F7F7F7;
+}
+
+.login_form_top p{
+  margin-bottom: 20px;
+}
+
+main input{
+width: 200px;
+padding:3px;
+margin: 5px 0;
+}
+
+main button{
+  display: block;
+  margin: 20px auto 0;
+  border:none;
+  background-color: #666;
+  color:#fff;
+  width: 200px;
+  height: 3em;
+  transition:0.5s;
+}
+
+button:hover{
+  opacity:0.7;
+}
+
+
+}

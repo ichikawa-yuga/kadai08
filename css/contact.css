@@ -1,0 +1,516 @@
+@charset "utf-8";
+
+
+/* ーーーーーーフォントーーーーーー */
+
+.contact_tel_item h2{
+  font-weight: bold;
+}
+
+
+.contact_tel_item p{
+  font-size:18px;
+}
+
+.form_item h4{
+  font-size: 14px;
+}
+.radio{
+  font-size:14px;
+}
+
+/* ーーーーーー色ーーーーーー */
+
+.form_item span{
+  padding: 5px;
+  background-color:#CE0000;
+  color:#fff;
+  margin-left: 20px;
+}
+
+.form_item .blue{
+  /* background-color: #468; */
+  background-color: #808080;
+}
+
+
+
+/* ーーーーーーーーーーPCーーーーーーーーーー */
+
+@media (min-width:768px){
+
+
+.contact_wrapper{
+  margin-top: 70px;
+}
+
+.form_sp {
+display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#contact_tel{
+width: 80%;
+margin: 0 auto;
+margin-bottom: 100px;
+
+}
+
+.contact_tel_item{
+  border:1px solid #468;
+  padding: 30px;
+  text-align: center;
+}
+
+.contact_tel_item > div{
+  display: flex;
+      align-items: center;
+  justify-content: center;
+}
+
+.contact_tel_item h2,.contact_tel_item h3,.contact_tel_item img{
+  padding-bottom: 15px;
+}
+
+.contact_tel_item img{
+     width: 8%;
+    margin-right: 10px;
+}
+
+.contact_tel_item h3{
+  font-size:24px;
+  line-height: 1.5;
+  color:#333;
+  margin-bottom: 10px;
+}
+
+
+.contact_tel_item p{
+  line-height: 1em;
+  padding-bottom:10px;
+}
+
+#form{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form_text{
+  width: 100%;
+  /* margin-bottom: 30px; */
+}
+
+.form_text h3{
+  font-size:20px;
+  line-height: 1.2;
+  font-weight: bold;
+  color:#333;
+  padding-bottom: 10px;
+}
+
+.form_text p{
+  line-height: 1.8;
+}
+
+.form_text > p > span{
+padding:5px;
+background-color: #CE0000;
+color:#fff;
+margin: 0 5px;
+}
+
+.form_item{
+  /* display:grid;
+  grid-template-columns: 1fr 1fr 3fr; */
+  display: grid;
+    grid-template-columns: 1fr 2fr;
+justify-content: center;
+    width: 100%;
+margin:0 auto;
+  padding: 30px 0;
+  /* margin-bottom: 50px; */
+  vertical-align: middle;
+  border-bottom:1px solid #EDEDED;
+}
+
+.form_item_input{
+    border: 1px solid #ddd;
+  border-radius: 3px;
+  /* margin-left: auto; */
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 48px;
+  flex: 1;
+  width: 100%;
+  /* max-width: 410px; */
+  background: #eaedf2;
+  /* font-size: 18px; */
+}
+
+.form_item h4,.form_item p{
+  line-height: 3em;
+}
+
+/* ーーーーーーお問い合わせ内容ーーーーーー */
+
+textarea{
+  height: 100px;
+}
+
+/* ラジオボタン */
+
+.radio{
+  width: 100%;
+  display: grid;
+   grid-template-columns: 1fr 8fr;
+  align-items: center;
+}
+
+.radio{
+  /* width: 60%; */
+  padding: 10px 0;
+}
+
+.radio > input{
+  height:25px;
+}
+
+/* 住所 */
+.form_item_input_address{
+  display: flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.form_item_input_address p{
+padding: 0 5px;
+}
+
+/* 確認ボタン */
+.btn{
+  display: block;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.kakunin_btn{
+display: inline-block;
+padding:10px;
+width: 15em;
+height: 48px;
+margin: 20px;
+border: 1px solid #468;
+border-radius: 3px;
+color:#468;
+background-color: #fff;
+transition:0.5s;
+box-sizing: border-box;
+}
+
+
+.kakunin_btn:hover{
+    color:#fff;
+background-color: #468;
+}
+
+.reset_btn{
+  /* font-size: 18px; */
+  display: inline-block;
+padding:10px;
+width: 15em;
+height: 48px;
+margin: 20px;
+border: 1px solid #616161;
+border-radius: 3px;
+color:#616161;
+background-color: #fff;
+transition:0.5s;
+box-sizing: border-box;
+}
+
+.reset_btn:hover{
+    color:#fff;
+background-color: #BABABA;
+}
+
+.privacy{
+  padding-bottom:50px ;
+}
+
+}
+
+
+/* ーーーーーーーーーーSPーーーーーーーーーー */
+@media (max-width:767px){
+
+  .pc{
+    display:none;
+  }
+
+  .top_wrapper{
+    margin-bottom: 50px;
+  }
+
+  .title_copy {
+    display: block;
+    position: absolute;
+    top: 70%;
+    left: 10rem;
+    transform: translate(-50%,-50%);
+    line-height: 1.5;
+    font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+    color: #fff;
+    z-index: 99;
+}
+
+.title_copy h2 {
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+}
+
+.form_sp{
+  display: flex;
+}
+
+#contact_tel{
+width: 90%;
+margin: 0 auto;
+margin-bottom: 50px;
+
+}
+
+
+.contact_tel_item{
+  border:1px solid #468;
+  padding: 30px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* .contact_tel_item > div{
+  display: block;
+  justify-content: center;
+} */
+
+.contact_tel_item img{
+  width: 100%;
+}
+
+.contact_tel_item h2,.contact_tel_item h3,.contact_tel_item img{
+  /* padding-bottom: 15px; */
+}
+
+.contact_tel_item h2{
+  letter-spacing:0;
+}
+
+.contact_tel_item h3{
+  font-size:20px;
+  line-height: 1.5;
+  color:#333;
+  margin-bottom: 10px;
+}
+
+.contact_tel_item p{
+  line-height: 1em;
+  /* padding-bottom:15px; */
+}
+
+.contact_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#468;
+  background-color: #fff;
+  border:1px solid #468;
+  /* width: 80vmin;
+  max-width: 400px; */
+  text-align: center;
+  padding: 20px 15px;
+  margin: 20px auto;
+  transition: 0.3s;
+  font-size: 20px;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* .contact_btn:hover{
+color:#fff;
+background-color: #468;
+
+} */
+
+.img_icon{
+  position:relative;
+  width: 45px;
+}
+
+.img_1,.img_2{
+  position:absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 1rem;
+}
+
+.img_2:hover{
+  opacity:0;
+}
+
+/* コンタクトフォーム */
+
+#form{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form_text{
+  width: 100%;
+  /* margin-bottom: 30px; */
+}
+
+.form_text h3{
+  font-size:20px;
+  line-height: 1.5;
+  font-weight: bold;
+  color:#333;
+  padding-bottom: 10px;
+}
+
+.form_text p{
+  line-height: 1.8;
+}
+
+.form_text > p > span{
+padding:5px;
+background-color: #CE0000;
+color:#fff;
+margin: 0 5px;
+}
+
+.form_item{
+  /* display:grid;
+  grid-template-columns: 1fr 1fr 3fr; */
+justify-content: center;
+    width: 100%;
+margin:0 auto;
+  padding: 30px 0;
+  /* margin-bottom: 50px; */
+  vertical-align: middle;
+  border-bottom:1px solid #EDEDED;
+}
+
+.form_item:last-child{
+  margin-bottom: 50px;
+}
+
+.form_item_input{
+    border: 1px solid #ddd;
+  border-radius: 3px;
+  /* margin-left: auto; */
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 48px;
+  flex: 1;
+  width: 100%;
+  /* max-width: 410px; */
+  background: #eaedf2;
+  /* font-size: 18px; */
+}
+
+.form_item h4,.form_item p{
+  line-height: 3em;
+}
+
+/* ーーーーーーお問い合わせ内容ーーーーーー */
+
+textarea{
+  height: 100px;
+}
+
+/* ラジオボタン */
+
+.radio{
+  width: 100%;
+  display: grid;
+   grid-template-columns: 1fr 8fr;
+  align-items: center;
+}
+
+.radio{
+  /* width: 60%; */
+  padding: 10px 0;
+}
+
+.radio > input{
+  height:25px;
+}
+
+/* 住所 */
+.form_item_input_address{
+  display: flex;
+  justify-content:space-between;
+}
+
+.form_item_input_address p{
+padding: 0 5px;
+}
+
+/* 確認ボタン */
+.btn{
+  display: block;
+  text-align: center;
+  /* width: 80%; */
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.kakunin_btn{
+font-size: 18px;
+display: inline-block;
+padding:20px 15px;
+width: 80vmin;
+/* height: 48px; */
+margin-bottom: 30px;
+/* margin: 20px; */
+border: 1px solid #468;
+border-radius: 3px;
+letter-spacing: 1em;
+color:#468;
+background-color: #fff;
+transition:0.5s;
+box-sizing: border-box;
+}
+
+/* .kakunin_btn:hover{
+    color:#fff;
+background-color: #468;
+} */
+
+.reset_btn{
+font-size: 18px;
+display: inline-block;
+padding:20px 15px;
+width: 80vmin;
+/* height: 48px;
+margin: 20px; */
+border: 1px solid #616161;
+border-radius: 3px;
+color:#616161;
+background-color: #fff;
+transition:0.5s;
+box-sizing: border-box;
+}
+
+/* .reset_btn:hover{
+    color:#fff;
+background-color: #BABABA;
+} */
+
+.privacy{
+  padding-bottom:50px ;
+}
+
+}

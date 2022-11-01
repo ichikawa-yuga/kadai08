@@ -1,0 +1,152 @@
+[
+  {
+    "label": 1,
+    "image": "img2/product1.jpg",
+    "itemName": "チヂミトサカ",
+    "price": "5300"
+  },
+  {
+    "label": 1,
+    "image": "img2/product2.jpeg",
+    "itemName": "スターポリプ",
+    "price": "3100"
+  },
+  {
+    "label": 1,
+    "image": "img2/product3.jpg",
+    "itemName": "ウミキノコ",
+    "price": "2980"
+  },
+  {
+    "label": 1,
+    "image": "img2/product4.jpg",
+    "itemName": "ディスクコーラル",
+    "price": "4500"
+  },
+  {
+    "label": 1,
+    "image": "img2/product5.jpg",
+    "itemName": "ツヅウミヅタ",
+    "price": "6000"
+  },
+  {
+    "label": 1,
+    "image": "img2/product6.jpg",
+    "itemName": "マメスナギンチャク",
+    "price": "2500"
+  },
+  {
+    "label": 1,
+    "image": "img2/product7.jpg",
+    "itemName": "ウミアザミ",
+    "price": "3500"
+  },
+  {
+    "label": 2,
+    "image": "img2/product8.jpg",
+    "itemName": "キクメイシ",
+    "price": "4500"
+  },
+  {
+    "label": 2,
+    "image": "img2/product9.jpg",
+    "itemName": "ナガレハナサンゴ",
+    "price": "5000"
+  },
+  {
+    "label": 2,
+    "image": "img2/product10.jpg",
+    "itemName": "キッカサンゴ",
+    "price": "5000"
+  },
+  {
+    "label": 2,
+    "image": "img2/product11.jpg",
+    "itemName": "ハナサンゴ",
+    "price": "5500"
+  },
+  {
+    "label": 2,
+    "image": "img2/product12.jpg",
+    "itemName": "アワサンゴ",
+    "price": "4500"
+  },
+  {
+    "label": 2,
+    "image": "img2/product13.jpg",
+    "itemName": "カクオオトゲキクメイシ",
+    "price": "9000"
+  },
+  {
+    "label": 2,
+    "image": "img2/product14.jpg",
+    "itemName": "ハナガササンゴ",
+    "price": "3980"
+  },
+  {
+    "label": 2,
+    "image": "img2/product15.jpg",
+    "itemName": "オオタバサンゴ",
+    "price": "2680"
+  },
+  {
+    "label": 2,
+    "image": "img2/product16.jpg",
+    "itemName": "ハナガタサンゴ",
+    "price": "5500"
+  },
+  {
+    "label": 3,
+    "image": "img2/product17.jpg",
+    "itemName": "ハナヤサイサンゴ",
+    "price": "4894"
+  },
+  {
+    "label": 3,
+    "image": "img2/product18.jpg",
+    "itemName": "ショウガサンゴ",
+    "price": "4000"
+  },
+  {
+    "label": 3,
+    "image": "img2/product19.jpg",
+    "itemName": "ミドリイシ",
+    "price": "6000"
+  },
+  {
+    "label": 3,
+    "image": "img2/product20.jpg",
+    "itemName": "ハイマツミドリイシ",
+    "price": "4447"
+  },
+  {
+    "label": 3,
+    "image": "img2/product21.jpg",
+    "itemName": "コモンサンゴ",
+    "price": "4566"
+  },
+  {
+    "label": 3,
+    "image": "img2/product22.jpg",
+    "itemName": "ウスコモンサンゴ",
+    "price": "3000"
+  },
+  {
+    "label": 3,
+    "image": "img2/product23.jpg",
+    "itemName": "メデゥーササンゴ",
+    "price": "4206"
+  },
+  {
+    "label": 3,
+    "image": "img2/product24.jpg",
+    "itemName": "エダコモンサンゴ",
+    "price": "4020"
+  },
+  {
+    "label": 3,
+    "image": "img2/product25.jpg",
+    "itemName": "トゲサンゴ",
+    "price": "3920"
+  }
+]

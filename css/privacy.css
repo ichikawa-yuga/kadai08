@@ -1,0 +1,45 @@
+@charset "UTF-8";
+ol li {
+  list-style-type: decimal;
+  margin: 0 0 0 1em;
+}
+
+.right {
+  text-align: right;
+}
+
+.ireko {
+  margin: 0 0 0 1em;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+ol, p {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  /* ここにSP向けのCSS指定 */
+  .privacy_wrapper {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .pc {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* ここにPC向けのCSS指定 */
+  .privacy_wrapper {
+    width: 72%;
+    margin: 0 auto;
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+}
+/*# sourceMappingURL=privacy.css.map */
