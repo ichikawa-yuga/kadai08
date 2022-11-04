@@ -93,7 +93,7 @@
                 </div>
               </picture>
               <p>{{ product.itemName }}</p>
-              <p>￥{{ product.price }}～</p>
+              <p>{{ product.price }}～</p>
           </div>
         </div>
 
@@ -101,11 +101,11 @@
      <!-- ページネーション --> 
      <div class="pagination">
         <p class="total_counter">{{ total_counter }}</p>
-        <p class="prev" v-on:click="prev_btn()">前へ</p>
+        <p class="prev" v-on:click="prev_btn" v-bind:class="{disable:btnPrev}">前へ</p>
         <ul class="page_counter" v-for="page in pageBox">
             <li>{{ page.pageNumber }}</li>
         </ul>
-        <p class="next" v-on:click="next_btn">次へ</p>
+        <p class="next" v-on:click="next_btn" v-bind:class="{disable:btnNext}">次へ</p>
     </div>
 
 <!-- js仕様 -->

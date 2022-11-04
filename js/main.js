@@ -2,7 +2,7 @@ new Vue({
   el: "#app",
   data: {
     sortType: "",
-    productlists: [],
+    productlists: "",
     // ページ遷移のブロック
     pageBox: [],
     // グローバル変数データ3つ
@@ -12,45 +12,102 @@ new Vue({
 
     total_counter: "",
     count: "6",
+
+    // ボタン
+    btnPrev: false,
+    btnNext: false,
   },
   // 2種類のJSON読み込み、DOMの構築が完了したタイミングでページネーション発火
   created() {
-    this.productJson()
-    this.pageJson()
-    window.addEventListener('DOMContentLoaded', this.DOMContentLoaded);
+    // this.productJson();
+    this.pageJson();
+    this.domHandler();
+    // window.addEventListener('DOMContentLoaded', this.DOMContentLoaded);
   },
-  //     // // イベント処理
+
+  //// // イベント処理
   methods: {
     //  // ページ数を算出()
-    split_page: function (current_step_update) {
+    split_page: async function (current_step_update) {
+      const res = await fetch("js/product.json");
+      const users = await res.json();
+  
+      this.productlists = users;
+      console.log(this.productlists.length)
+      console.log(this.productlists.length);
+      console.log(this.productlists);
+
       let total_step = Math.ceil(this.productlists.length / this.count);
+      if (current_step_update === undefined || this.current_step === 1) {
+        this.current_step = 1;
+       // disableクラスを削除
+        this.btnNext = false;
+        // disableクラスを追加
+        this.btnPrev = true;
+      } else if (current_step_update === total_step) {
+        // disableクラスを追加
+        this.btnNext = true;
+        // disableクラスを削除
+        this.btnPrev = false;
+      } else {
+        this.current_step = current_step_update;
+        // disableクラスを削除
+        this.btnNext = false;
+        this.btnPrev = false;
+      }
+      // Vue.split_page でclassListを読み取れません
       // if (current_step_update === undefined || this.current_step === 1) {
       //   this.current_step = 1;
+      //   // disableクラスを削除
       //   this.next_btn().classList.remove('disable');
+      //   // disableクラスを追加
       //   this.prev_btn().classList.add('disable');
+
       // } else if (current_step_update === total_step) {
+      //   // disableクラスを追加
       //   this.next_btn().classList.add('disable');
+      //   // disableクラスを削除
       //   this.prev_btn().classList.remove('disable');
+
       // } else {
       //   this.current_step = current_step_update;
+      //   // disableクラスを削除
       //   this.next_btn().classList.remove('disable');
       //   this.prev_btn().classList.remove('disable');
       // }
-      this.total_counter = this.current_step + '/' + total_step;
+
+      //ページカウンタ
+      this.total_counter = this.current_step + "/" + total_step;
       this.redraw(this.current_step, this.count);
     },
+
     prev_btn: function () {
-      this.split_page(this.current_step += 1);
+      this.split_page((this.current_step += 1));
+      // if (this.current_step >= 2 && this.current_step <= 5) {
+      //   this.split_page(this.current_step += 1);
+      //   console.log(this.current_step);
+      //   console.log('this.split_page'+this.split_page);
+      // } else {
+      //   console.log('失敗');
+      // }
     },
+
     next_btn: function () {
-      this.split_page(this.current_step -= 1);
+      this.split_page((this.current_step -= 1));
+      // if (this.current_step >= 2 || this.current_step <= 5) {
+      //   this.split_page(this.current_step -= 1);
+      // } else {
+      //   this.split_page(this.current_step -= 0);
+      // }
+
       // this.total_counter = "next"
     },
-    productJson: async function () {
-      const res = await fetch("js/product.json");
-      const users = await res.json();
-      this.productlists = users;
-    },
+
+    // productJson: async function () {
+    //   const res = await fetch("js/product.json");
+    //   const users = await res.json();
+    //   return this.productlists = users;
+    // },
     pageJson: async function () {
       const res2 = await fetch("js/page.json");
       const users2 = await res2.json();
@@ -65,15 +122,19 @@ new Vue({
     //   setTimeout(function() {this.count += 1})
 
     // DOMの構築が完了したタイミングでページネーション発火(createdを使うはず、研修テキスト10を参考に)
-    //    window.addEventListener('DOMContentLoaded', () => {
-    //    this.split_page();
-    //    this.pageBox.forEach((element, index) => {
-    //         element.addEventListener('click', function(e) {
-    //             this.current_step = Number(this.pageBox.pageNumber);
-    //             this.split_page(this.current_step);
-    //         })
-    //     });
-    // })
+    domHandler: function ($event) {
+      window.addEventListener("DOMContentLoaded", () => {
+        this.split_page();
+
+        this.pageBox.forEach((element, index) => {
+          element.addEventListener("click", function (e) {
+            this.current_step = Number(this.pageBox.pageNumber);
+            this.split_page(this.current_step);
+          });
+        });
+      });
+    },
+
     sortList: function () {
       let newList = [];
       for (let i = 0; i < this.productlists.length; i++) {
@@ -96,7 +157,6 @@ new Vue({
       }
       return newList;
     },
-
 
     // DOMの描画
     redraw: function (current_step, count) {
@@ -121,7 +181,5 @@ new Vue({
       //     }
       // });
     },
-
-
   },
 });
