@@ -85,7 +85,7 @@
               </select>
         </div> 
          <div class="syohin_item-flex"> 
-        <div class="syohin_item"  v-for="product in sortList()">
+        <div class="syohin_item"   v-for="product in productlists2()">
               <picture>
                 <source media="(max-width:767px)" srcset=""> 
                  <div class="image-block">
@@ -102,8 +102,9 @@
      <div class="pagination">
         <p class="total_counter">{{ total_counter }}</p>
         <p class="prev" v-on:click="prev_btn" v-bind:class="{disable:btnPrev}">前へ</p>
-        <ul class="page_counter" v-for="page in pageBox">
-            <li>{{ page.pageNumber }}</li>
+            </li>
+        <ul class="page_counter" v-for="i in displayPageRange"  v-on:click="pageSelect(i)" v-bind:class="{active: i-1 === currentPage}">
+            <li>{{ i }}</li>
         </ul>
         <p class="next" v-on:click="next_btn" v-bind:class="{disable:btnNext}">次へ</p>
     </div>
