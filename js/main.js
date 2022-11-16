@@ -68,7 +68,6 @@ new Vue({
       this.split_page((this.current_step -= 1));
       if (0 < this.currentPage) {
         this.currentPage--;
-        // this.selectHandler();
       }
     },
     /**
@@ -78,7 +77,6 @@ new Vue({
       this.split_page((this.current_step += 1));
       if (this.currentPage < this.pages - 1) {
         this.currentPage++;
-        // this.selectHandler();
       }
     },
     /**
@@ -87,14 +85,12 @@ new Vue({
      */
     pageSelect:function (index) {
       this.currentPage = index - 1;
-      // this.selectHandler();
+      // ページ番号とtotal_counterの紐づけ
+      this.split_page((this.current_step = index));
     },
     /**
      * ページを変更したときの処理
      */
-    // selectHandler () {
-    //   // なんかの処理
-    // },
     pageJson: async function () {
       const res2 = await fetch("js/page.json");
       const users2 = await res2.json();
@@ -139,8 +135,6 @@ new Vue({
       console.log(sliceList);
       return sliceList;
     },
-
-
     // increment: function(){
     //   setTimeout(function() {this.count += 1})
 
