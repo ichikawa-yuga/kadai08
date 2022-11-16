@@ -68,7 +68,7 @@ new Vue({
       this.split_page((this.current_step -= 1));
       if (0 < this.currentPage) {
         this.currentPage--;
-        this.selectHandler();
+        // this.selectHandler();
       }
     },
     /**
@@ -78,7 +78,7 @@ new Vue({
       this.split_page((this.current_step += 1));
       if (this.currentPage < this.pages - 1) {
         this.currentPage++;
-        this.selectHandler();
+        // this.selectHandler();
       }
     },
     /**
@@ -87,45 +87,33 @@ new Vue({
      */
     pageSelect:function (index) {
       this.currentPage = index - 1;
-      this.selectHandler();
+      // this.selectHandler();
     },
     /**
      * ページを変更したときの処理
      */
-    selectHandler () {
-      // なんかの処理
-    },
-
-    // prev_btn: function () {
-    //   this.split_page((this.current_step -= 1));
-    //   return (this.page == 0);
-
+    // selectHandler () {
+    //   // なんかの処理
     // },
-
-    // next_btn: function () {
-    //   this.split_page((this.current_step += 1));
-    //   return ((this.page + 1) * this.count >= this.productlists.length);
-
-    // },
-    // pageSelect: function(index) {
-    //   this.currentPage = index - 1;
-    // },
-
     pageJson: async function () {
       const res2 = await fetch("js/page.json");
       const users2 = await res2.json();
       this.pageBox = users2;
     },
 
-    DOMContentLoaded: function () {
-      this.split_page();
-    },
-    productlists2: function () {
-      let head = this.currentPage * this.count;
-      return this.productlists.slice(head, head + this.count);
-    },
+    // DOMContentLoaded: function () {
+    //   this.split_page();
+    // },
+    // 商品6個表示ページネーション処理
+    // productlists2: function () {
+    //   let head = this.currentPage * this.count;
+    //   return this.productlists.slice(head, head + this.count);
+    // },
     sortList: function () {
       let newList = [];
+       // 商品6個表示ページネーション処理
+      // let sliceList = this.productlists2();
+      // console.log(newList);
       for (let i = 0; i < this.productlists.length; i++) {
         let isShow = true;
         if (this.sortType === 1 && this.productlists[i].label !== 1) {
@@ -143,11 +131,13 @@ new Vue({
         if (isShow) {
           newList.push(this.productlists[i]);
         }
-        this.productlists2()
       }
-        // let head = this.currentPage * this.count;
-        // return this.productlists.slice(head, head + this.count);
-      return newList;
+      console.log(newList);
+       // 商品6個表示ページネーション処理
+      let head = this.currentPage * this.count;
+      let sliceList = newList.slice(head, head + this.count);
+      console.log(sliceList);
+      return sliceList;
     },
 
 

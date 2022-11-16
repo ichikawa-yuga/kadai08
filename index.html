@@ -85,7 +85,7 @@
               </select>
         </div> 
          <div class="syohin_item-flex"> 
-        <div class="syohin_item"   v-for="product in productlists2()">
+        <div class="syohin_item"   v-for="product in sortList()">
               <picture>
                 <source media="(max-width:767px)" srcset=""> 
                  <div class="image-block">
@@ -109,44 +109,6 @@
         <p class="next" v-on:click="next_btn" v-bind:class="{disable:btnNext}">次へ</p>
     </div>
 
-<!-- js仕様 -->
-        <!-- <div class="select-type_sorting_container">
-            <label for="sort">種類ソート:</label>
-            <select id="select-type" class="select-type_sorting">
-                <option value="1">ソフトコーラル</option>
-                <option value="2">LPS</option>
-                <option value="3">SPS</option>
-              </select>
-        </div>
-        <div class="syohin_item-flex"> 
-            <div class="syohin_item">
-                        <div class="image-block"><img src="img2/product1.jpg"><p>チヂミトサカ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product2.jpeg"><p>スターポリプ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product3.jpg"><p>ウミキノコ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product4.jpg"><p>ディスクコーラル</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product5.jpg"><p>ツヅウミヅタ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product6.jpg"><p>マメスナギンチャク</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product7.jpg"><p>ウミアザミ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product8.jpg"><p>キクメイシ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product9.jpg"><p>ナガレハナサンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product10.jpg"><p>キッカサンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product11.jpg"><p>ハナサンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product12.jpg"><p>アワサンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product13.jpg"><p>カクオオトゲキクメイシ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product14.jpg"><p>ハナガササンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product15.jpg"><p>オオタバサンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product16.jpg"><p>ハナガタサンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product17.jpg"><p>ハナヤサイサンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product18.jpg"><p>ショウガサンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product19.jpg"><p>ミドリイシ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product20.jpg"><p>ハイマツミドリイシ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product21.jpg"><p>コモンサンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product22.jpg"><p>ウスコモンサンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product23.jpg"><p>メデゥーササンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product24.jpg"><p>エダコモンサンゴ</p><p>5300～</p></div>
-                        <div class="image-block"><img src="img2/product25.jpg"><p>トゲサンゴ</p><p>5300～</p></div>
-                    </div>
-              </div> -->
         </div>
       </section>
     </div>
