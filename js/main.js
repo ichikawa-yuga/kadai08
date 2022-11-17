@@ -14,6 +14,7 @@ new Vue({
     total_counter: "",
     count: 6,
     currentPage: 0,   // 現在のページ番号
+    width: window.innerWidth,
 
     // ボタン
     btnPrev: false,
@@ -24,11 +25,16 @@ new Vue({
     // this.productJson();
     this.pageJson();
     this.domHandler();
+    addEventListener('resize', this.resizeHandler);
     // window.addEventListener('DOMContentLoaded', this.DOMContentLoaded);
   },
 
   //// // イベント処理
   methods: {
+      //  // スマホ、PC画面切り替え
+    resizeHandler: function($event) {
+      this.width = $event.target.innerWidth;
+    },
     //  // ページ数を算出()
     split_page: async function (current_step_update) {
       const res = await fetch("js/product.json");
@@ -39,6 +45,11 @@ new Vue({
       console.log(this.productlists.length);
       console.log(this.productlists);
 
+      if(this.width <= 600){
+        this.count = 4
+      } else {
+        this.count = 6
+      }
       let total_step = Math.ceil(this.productlists.length / this.count);
       if (current_step_update === undefined || this.current_step === 1) {
         this.current_step = 1;
@@ -107,9 +118,7 @@ new Vue({
     // },
     sortList: function () {
       let newList = [];
-       // 商品6個表示ページネーション処理
-      // let sliceList = this.productlists2();
-      // console.log(newList);
+
       for (let i = 0; i < this.productlists.length; i++) {
         let isShow = true;
         if (this.sortType === 1 && this.productlists[i].label !== 1) {
@@ -129,26 +138,29 @@ new Vue({
         }
       }
       console.log(newList);
+       // スマホとPCでの表示切り替え処理
+      if(this.width <= 600){
+        this.count = 4
+      } else {
+        this.count = 6
+      }
        // 商品6個表示ページネーション処理
       let head = this.currentPage * this.count;
       let sliceList = newList.slice(head, head + this.count);
       console.log(sliceList);
       return sliceList;
     },
-    // increment: function(){
-    //   setTimeout(function() {this.count += 1})
-
     // DOMの構築が完了したタイミングでページネーション発火(createdを使うはず、研修テキスト10を参考に)
     domHandler: function ($event) {
       window.addEventListener("DOMContentLoaded", () => {
         this.split_page();
 
-        this.pageBox.forEach((element, index) => {
-          element.addEventListener("click", function (e) {
-            this.current_step = Number(this.pageBox.pageNumber);
-            this.split_page(this.current_step);
-          });
-        });
+        // this.pageBox.forEach((element, index) => {
+        //   element.addEventListener("click", function (e) {
+        //     this.current_step = Number(this.pageBox.pageNumber);
+        //     this.split_page(this.current_step);
+        //   });
+        // });
       });
     },
 
@@ -165,11 +177,13 @@ new Vue({
     },
   },
   computed: {
-    // productlists2: function () {
-    //   let head = this.currentPage * this.count;
-    //     return this.productlists.slice(head, head + this.count);
-    // },
-    pages () {
+    pages() {
+       // スマホとPCでの表示切り替え処理
+      if(this.width <= 600){
+        this.count = 4
+      } else {
+        this.count = 6
+      }
       return Math.ceil(this.productlists.length / this.count);
     },
     displayPageRange: function () {
